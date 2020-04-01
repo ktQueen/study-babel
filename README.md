@@ -41,3 +41,41 @@ babel-polyfill就是core-js和regenerator的集合
 babel7.4之后弃用了babel-polyfill
 
 推荐直接使用core-js和regenerator
+
+#### babel特点
+babel只关系语法，不关心API
+babel不处理模块化，webpack处理模块化，所以webpack和babel结合
+
+babel只解析语法
+Promise.resolve(100).then(data=>data);
+[10,20,30].includes(20)
+本身的语法就是符合ES5语法规范的，但是这个语法有没有babel就不关心了，babel只解析语法，所以我们需要polyfill进行一个补丁一个兼容，因为有的浏览器不支持Promise、includes这两个API,所以我们需要引入babel-polyfill这个API
+
+#### babel-polyfill如何按需引入
+
+babel-polyfill文件较大，只用其中的一部分功能，无需全部引入，怎么配置按需引入？
+    删除index.js 
+    ```
+    // import '@babel/polyfill'
+    ```
+    
+    在.babelrc文件里配置
+    usage就是按需引入的意思
+    corejs版本是3
+    ```
+    {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "useBuiltIns":"usage",
+                    "corejs":3
+                }
+            ]
+        ],
+        "plugins": [
+            
+        ]
+    }
+    ```
+

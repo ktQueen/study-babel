@@ -1,19 +1,26 @@
+// import '@babel/polyfill'
+
 const sum =(a,b) =>a + b
 
-// ES6 generator函数（处理异步），被async/await代替
-function* tell(){
-    console.log('执行a处理');
-    yield 'a';
+// 新的API
+Promise.resolve(100).then(data=>data);
+// 新的API
+[10,20,30].includes(20)
 
-    console.log('执行b处理');
-    yield 'b';
+// // ES6 generator函数（处理异步），被async/await代替
+// function* tell(){
+//     console.log('执行a处理');
+//     yield 'a';
 
-    console.log('执行c处理');
-    yield 'c';
+//     console.log('执行b处理');
+//     yield 'b';
+
+//     console.log('执行c处理');
+//     yield 'c';
     
-}
-let k=tell()
-console.log(k.next());
-console.log(k.next());
-console.log(k.next());
-console.log(k.next());
+// }
+// let k=tell()
+// console.log(k.next());
+// console.log(k.next());
+// console.log(k.next());
+// console.log(k.next());
