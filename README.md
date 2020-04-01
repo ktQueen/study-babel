@@ -70,7 +70,7 @@ babel-polyfill文件较大，只用其中的一部分功能，无需全部引入
     usage就是按需引入的意思
 
     corejs版本是3
-    
+
     ```
     {
         "presets": [
@@ -87,4 +87,10 @@ babel-polyfill文件较大，只用其中的一部分功能，无需全部引入
         ]
     }
     ```
+#### babel-polyfill的问题
 
+会污染全局环境，如果做一个独立的web系统，则无碍，但是如果做一个第三方库lib,则会有问题
+
+## babel-runtime
+
+babel-runtime会重新取个方法名就不会污染全局环境
